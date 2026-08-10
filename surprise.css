@@ -1,0 +1,983 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #202845 0%,
+            #101527 35%,
+            #050711 72%,
+            #020308 100%
+        );
+
+    color: #f5f1e8;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+
+/* =====================================================
+   STARS
+   ===================================================== */
+
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.75) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.4) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        110px 110px,
+        180px 180px;
+
+    opacity: .3;
+
+    animation:
+        starsMove 30s linear infinite;
+
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-110px);
+    }
+
+}
+
+
+
+/* =====================================================
+   MOON
+   ===================================================== */
+
+
+.moon {
+
+    position: fixed;
+
+    top: 9%;
+
+    right: 10%;
+
+    width: 85px;
+
+    height: 85px;
+
+    border-radius: 50%;
+
+    background:
+        #e9e4d8;
+
+    box-shadow:
+        0 0 50px
+        rgba(235,229,211,.18);
+
+    opacity: .55;
+
+}
+
+
+.moon::after {
+
+    content:
+        "";
+
+    position: absolute;
+
+    width: 82px;
+
+    height: 82px;
+
+    border-radius: 50%;
+
+    top: -8px;
+
+    right: -12px;
+
+    background:
+        #11172a;
+
+}
+
+
+
+/* =====================================================
+   GLOW
+   ===================================================== */
+
+
+.glow {
+
+    position: fixed;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(130px);
+
+    opacity: .12;
+
+    pointer-events: none;
+
+}
+
+
+.glow-one {
+
+    left: -180px;
+
+    bottom: -200px;
+
+    background:
+        #6f80bd;
+
+}
+
+
+.glow-two {
+
+    right: -200px;
+
+    top: 35%;
+
+    background:
+        #a87890;
+
+}
+
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+
+.surprise-page {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        30px;
+
+}
+
+
+
+/* =====================================================
+   INTRO
+   ===================================================== */
+
+
+.intro-section {
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.intro-section.hide {
+
+    opacity: 0;
+
+    transform:
+        scale(.95)
+        translateY(-20px);
+
+    pointer-events:
+        none;
+
+}
+
+
+.eyebrow {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        5px;
+
+    color:
+        rgba(245,241,232,.4);
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.intro-section h1 {
+
+    font-size:
+        clamp(
+            38px,
+            7vw,
+            72px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        1.1;
+
+}
+
+
+.intro-text {
+
+    margin:
+        25px auto 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(245,241,232,.45);
+
+}
+
+
+.instruction {
+
+    margin-top:
+        10px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        rgba(245,241,232,.25);
+
+}
+
+
+
+/* =====================================================
+   GIFT BUTTON
+   ===================================================== */
+
+
+.gift-button {
+
+    margin-top:
+        55px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        #f5f1e8;
+
+    cursor:
+        pointer;
+
+}
+
+
+.gift {
+
+    position:
+        relative;
+
+    width:
+        150px;
+
+    height:
+        135px;
+
+    margin:
+        auto;
+
+    transition:
+        transform .5s ease;
+
+}
+
+
+.gift-button:hover
+.gift {
+
+    transform:
+        translateY(-10px);
+
+}
+
+
+
+/* =====================================================
+   GIFT BOX
+   ===================================================== */
+
+
+.gift-box {
+
+    position:
+        absolute;
+
+    bottom:
+        0;
+
+    left:
+        20px;
+
+    width:
+        110px;
+
+    height:
+        85px;
+
+    background:
+        #b7a78e;
+
+    box-shadow:
+        0 25px 40px
+        rgba(0,0,0,.35);
+
+}
+
+
+.gift-lid {
+
+    position:
+        absolute;
+
+    left:
+        15px;
+
+    top:
+        35px;
+
+    width:
+        120px;
+
+    height:
+        25px;
+
+    background:
+        #d1c3aa;
+
+    z-index:
+        3;
+
+    transition:
+        transform .8s ease;
+
+}
+
+
+.ribbon-vertical {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        47px;
+
+    width:
+        17px;
+
+    height:
+        100%;
+
+    background:
+        #756a58;
+
+}
+
+
+.ribbon-horizontal {
+
+    position:
+        absolute;
+
+    left:
+        20px;
+
+    bottom:
+        35px;
+
+    width:
+        110px;
+
+    height:
+        16px;
+
+    background:
+        #756a58;
+
+    z-index:
+        2;
+
+}
+
+
+
+/* =====================================================
+   BOW
+   ===================================================== */
+
+
+.bow {
+
+    position:
+        absolute;
+
+    top:
+        17px;
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    border:
+        7px solid
+        #756a58;
+
+    border-radius:
+        50% 50% 5% 50%;
+
+}
+
+
+.bow-left {
+
+    left:
+        42px;
+
+    transform:
+        rotate(-35deg);
+
+}
+
+
+.bow-right {
+
+    right:
+        42px;
+
+    transform:
+        rotate(35deg);
+
+}
+
+
+
+/* =====================================================
+   BUTTON TEXT
+   ===================================================== */
+
+
+.gift-button > span {
+
+    display:
+        block;
+
+    margin-top:
+        18px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(245,241,232,.6);
+
+}
+
+
+
+/* =====================================================
+   REVEAL
+   ===================================================== */
+
+
+.reveal-section {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        30px;
+
+    opacity:
+        0;
+
+    transform:
+        scale(.95);
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+
+}
+
+
+.reveal-section.active {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1);
+
+    pointer-events:
+        auto;
+
+}
+
+
+.reveal-label {
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+
+    color:
+        rgba(245,241,232,.35);
+
+}
+
+
+
+/* =====================================================
+   NUMBER
+   ===================================================== */
+
+
+.number-wrap {
+
+    position:
+        relative;
+
+    margin:
+        15px 0;
+
+}
+
+
+.twenty {
+
+    font-size:
+        clamp(
+            130px,
+            23vw,
+            260px
+        );
+
+    font-weight:
+        400;
+
+    line-height:
+        .85;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #d8d0c2,
+            #9e927e
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+    text-shadow:
+        0 0 70px
+        rgba(220,210,190,.08);
+
+}
+
+
+
+/* =====================================================
+   REVEAL TEXT
+   ===================================================== */
+
+
+.reveal-section h2 {
+
+    margin-top:
+        10px;
+
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            50px
+        );
+
+    font-weight:
+        400;
+
+}
+
+
+.reveal-section h3 {
+
+    margin-top:
+        5px;
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            65px
+        );
+
+    font-weight:
+        400;
+
+    font-style:
+        italic;
+
+}
+
+
+.reveal-line {
+
+    width:
+        50px;
+
+    height:
+        1px;
+
+    margin:
+        25px 0;
+
+    background:
+        rgba(245,241,232,.45);
+
+}
+
+
+.reveal-message {
+
+    max-width:
+        600px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(245,241,232,.55);
+
+}
+
+
+.reveal-message.second {
+
+    margin-top:
+        12px;
+
+    color:
+        rgba(245,241,232,.35);
+
+}
+
+
+
+/* =====================================================
+   FINAL BUTTON
+   ===================================================== */
+
+
+.final-button {
+
+    margin-top:
+        35px;
+
+    padding:
+        13px 25px;
+
+    border:
+        1px solid
+        rgba(245,241,232,.25);
+
+    border-radius:
+        100px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color:
+        #f5f1e8;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+
+.final-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,.1);
+
+}
+
+
+.final-button span:last-child {
+
+    margin-left:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   CONFETTI
+   ===================================================== */
+
+
+.confetti-container {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        200;
+
+}
+
+
+.confetti {
+
+    position:
+        absolute;
+
+    top:
+        -20px;
+
+    width:
+        7px;
+
+    height:
+        14px;
+
+    opacity:
+        .85;
+
+    animation:
+        fall linear forwards;
+
+}
+
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+
+@media (max-width: 600px) {
+
+    .moon {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+        right:
+            8%;
+
+    }
+
+    .moon::after {
+
+        width:
+            54px;
+
+        height:
+            54px;
+
+    }
+
+    .gift {
+
+        transform:
+            scale(.85);
+
+    }
+
+    .reveal-message {
+
+        font-size:
+            12px;
+
+    }
+
+}
+

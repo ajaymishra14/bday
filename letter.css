@@ -1,0 +1,392 @@
+```css
+/* =====================================================
+   AKANKSHA — LETTER PAGE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #24233b 0%,
+            #121326 40%,
+            #070811 75%,
+            #030409 100%
+        );
+
+    color: #292522;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* =====================================================
+   BACKGROUND
+   ===================================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.12) 1px,
+            transparent 1px
+        );
+
+    background-size: 100px 100px;
+
+    opacity: .25;
+
+    animation: backgroundMove 25s linear infinite;
+}
+
+@keyframes backgroundMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING LIGHT
+   ===================================================== */
+
+.floating-light {
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: .12;
+
+    pointer-events: none;
+}
+
+.light-one {
+    top: 5%;
+    left: -100px;
+    background: #b49c82;
+}
+
+.light-two {
+    right: -100px;
+    bottom: 5%;
+    background: #8178ad;
+}
+
+
+/* =====================================================
+   PAGE
+   ===================================================== */
+
+.letter-page {
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 70px 20px;
+}
+
+
+/* =====================================================
+   LABEL
+   ===================================================== */
+
+.top-label {
+    margin-bottom: 25px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: rgba(255,255,255,.55);
+
+    opacity: 0;
+
+    animation:
+        fadeUp 1s ease forwards;
+}
+
+
+/* =====================================================
+   LETTER CARD
+   ===================================================== */
+
+.letter-card {
+
+    position: relative;
+
+    width: min(760px, 100%);
+
+    padding: 70px 75px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f0e6,
+            #ebe3d4
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        0 0 0 1px rgba(255,255,255,.08);
+
+    border-radius: 3px;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px)
+        rotateX(5deg);
+
+    animation:
+        cardReveal 1.4s .2s ease forwards;
+}
+
+@keyframes cardReveal {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotateX(0);
+    }
+
+}
+
+
+/* =====================================================
+   DECORATION
+   ===================================================== */
+
+.card-decoration {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    font-size: 18px;
+
+    color: #a08c72;
+
+    opacity: .65;
+}
+
+
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.letter-card h1 {
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    font-weight: 400;
+
+    color: #292522;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   DIVIDER
+   ===================================================== */
+
+.letter-line {
+
+    width: 45px;
+    height: 1px;
+
+    background: #a99880;
+
+    margin-bottom: 38px;
+}
+
+
+/* =====================================================
+   LETTER TEXT
+   ===================================================== */
+
+.letter-content {
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #49443e;
+}
+
+.letter-content p {
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   CLOSING
+   ===================================================== */
+
+.closing {
+
+    margin-top: 35px;
+
+    font-size: 18px;
+
+    color: #2f2a25;
+}
+
+
+/* =====================================================
+   SIGNATURE
+   ===================================================== */
+
+.signature {
+
+    margin-top: 45px;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    color: #81725f;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+   ===================================================== */
+
+.next-button {
+
+    margin-top: 35px;
+
+    padding: 13px 25px;
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: 100px;
+
+    background: rgba(255,255,255,.04);
+
+    color: #f4eee4;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.next-button:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,255,255,.1);
+}
+
+.next-button span {
+
+    margin-left: 10px;
+
+    transition:
+        transform .3s ease;
+}
+
+.next-button:hover span {
+
+    display: inline-block;
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =====================================================
+   ANIMATION
+   ===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .letter-page {
+        padding: 40px 15px;
+    }
+
+    .letter-card {
+        padding: 45px 25px;
+    }
+
+    .letter-content {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .letter-card h1 {
+        font-size: 34px;
+    }
+
+}
+```
